@@ -1,8 +1,8 @@
-# Restaurant Management System 
+# Restaurant Management System
 
 ## Overview
 
-This system manages a restaurant's menu and customer orders using Object-Oriented Programming principles in Dart. It consists of several core classes to handle restaurants, menus, and orders.
+This system manages a restaurant's menu and customer orders using Object-Oriented Programming principles in Dart. It includes classes for handling restaurants, menus, and orders efficiently.
 
 ---
 
@@ -16,11 +16,11 @@ Represents a single menu item.
 
 * `String name`: Name of the dish.
 * `double price`: Price of the dish.
-* `String category`: Category like Drinks, Main, Dessert, etc.
+* `String category`: Category such as Drinks, Main Course, Dessert, etc.
 
 **Methods:**
 
-* `displayInfo()`: Displays item details (optional).
+* `displayInfo()`: Displays item details in a readable format.
 
 ---
 
@@ -30,66 +30,70 @@ Represents a restaurant with a list of menu items.
 
 **Attributes:**
 
-* `String name`
-* `String location`
-* `List<Menu> menuItems`
+* `String name`: Name of the restaurant.
+* `String location`: Location of the restaurant.
+* `List<Menu> menuItems`: List of available menu items.
 
 **Methods:**
 
-* `addMenuItem(Menu item)`: Adds a menu item.
-* `displayMenu()`: Prints all available items.
+* `addMenuItem(Menu item)`: Adds a menu item to the restaurant.
+* `displayMenu()`: Displays all menu items for the restaurant.
 
 ---
 
 ### 3. `Order` Class
 
-Handles customer orders.
+Handles customer orders for a specific table.
 
 **Attributes:**
 
-* `int tableNo`
-* `List<Menu> customerOrder`
+* `int tableNo`: Table number where the order was placed.
+* `List<Menu> customerOrder`: List of menu items ordered.
 
 **Methods:**
 
-* `addToOrder(Menu item)`: Adds a menu item to the order.
-* `calculateTotal()`: Returns total cost.
-* `displayOrder()`: Displays order summary.
+* `addToOrder(Menu item)`: Adds a menu item to the current order.
+* `calculateTotal()`: Calculates the total cost of the order.
+* `displayOrder()`: Displays all items in the order.
 
 ---
 
 ### 4. `RestaurantSystem` Class
 
-Controls all restaurants and their operations.
+Central system managing multiple restaurants and customer orders.
 
 **Attributes:**
 
-* `List<Restaurant> _restaurants`
+* `List<Restaurant> _restaurants`: List of registered restaurants.
+* `List<Order> orders`: List of customer orders.
 
 **Methods:**
 
-* `addRestaurant(Restaurant restaurant)`
-* `assignMenuItem(Restaurant, Menu item)`
-* `showAllRestaurantsMenu()`
-
-
+* `addRestaurant(Restaurant restaurant)`: Adds a restaurant to the system.
+* `assignMenuItem(Restaurant, Menu item)`: Adds a menu item to a restaurant.
+* `showAllRestaurantsMenu()`: Displays menus for all restaurants.
+* `addOrder(Order order)`: Records a customer order.
+* `displayOrders()`: Displays all recorded orders and their totals.
 
 ---
 
 ## `main.dart` Flow Summary
 
 1. Create an instance of `RestaurantSystem`.
-2. Create and add restaurants.
-3. Create and assign menu items.
-4. Display menus for all restaurants.
-5. (Optional) Create orders, calculate totals, and display them.
+2. Create restaurant instances (`Restaurant`).
+3. Create menu items (`Menu`) and assign them to restaurants.
+4. Display the menu of each restaurant.
+5. (Optional) Create customer orders (`Order`) and associate them with items.
+6. Display all customer orders and calculate their total.
 
 ---
 
 ## Future Enhancements
 
-* Order history per restaurant
-* Daily revenue tracking
-* Categories and filtering
-* UI Integration (e.g., Flutter)
-* Admin panel for managing items/orders
+* Link orders to their respective restaurants.
+* Track total revenue per restaurant per day.
+* Allow filtering menu items by category or price.
+* Build a Flutter-based user interface.
+* Add admin features for managing restaurants, menu items, and orders.
+
+
